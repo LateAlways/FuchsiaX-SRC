@@ -5,7 +5,7 @@
 These are some more basic utilities that just save time when handling the different modules.
 
 ### MaterialLua
-This is the main UI library.
+This is the ols main UI library.
 
 ### bpAPI
 (https://github.com/LateAlways/BreakingPointAPI)
