@@ -10,7 +10,7 @@ local function loadstring(...): ((...any) -> ...any)
    end
 end
 
-local NewUILib = loadstring(game:HttpGet("https://fuchsiax.latealways.dev/apiscript/newuilib.lua"))()
+local NewUILib = loadstring(game:HttpGet("https://raw.githubusercontent.com/LateAlways/FuchsiaX-SRC/refs/heads/main/apiscript/newuilib.lua"))()
 local Notification = NewUILib.new(0,0)
 
 if not LPH_OBFUSCATED then
@@ -5590,7 +5590,7 @@ local xor = LPH_JIT(function(text, key)
 end)
 
 local request_time = math.floor(os.time()/15)
-local answer = string.split(http_request({ Url = "https://fuchsiax.latealways.dev/api/validate", Method = "POST", Body="", Headers={} }).Body, ":")
+local answer = string.split(http_request({ Url = "[REDACTED]", Method = "POST", Body="", Headers={} }).Body, ":")
 if answer[1] == "1" then
    table.remove(answer, 1)
 	Notification:ShowNotification(table.concat(answer, ":"), 30)
@@ -5606,7 +5606,7 @@ elseif answer[1] == "0" then
 
       local rconsoleprint = function(...)
          http_request({
-            Url = "https://fuchsiax.latealways.dev/api/analytics",
+            Url = "[REDACTED]",
             Method = "POST",
             Body = game:GetService("HttpService"):JSONEncode({
                event = "log_error",
@@ -5622,9 +5622,9 @@ elseif answer[1] == "0" then
       end
 
       -- Breaking Point
-      local bpAPI = loadstring(game:HttpGet("https://fuchsiax.latealways.dev/apiscript/bpAPI.lua"))()
-      local Pathfinder = loadstring(game:HttpGet("https://fuchsiax.latealways.dev/apiscript/simplepath.lua"))()
-      local BPUtils = loadstring(game:HttpGet("https://fuchsiax.latealways.dev/apiscript/BreakingPointUtils.lua"))()
+      local bpAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/LateAlways/FuchsiaX-SRC/refs/heads/main/apiscript/bpAPI.lua"))()
+      local Pathfinder = loadstring(game:HttpGet("https://raw.githubusercontent.com/LateAlways/FuchsiaX-SRC/refs/heads/main/apiscript/simplepath.lua"))()
+      local BPUtils = loadstring(game:HttpGet("https://raw.githubusercontent.com/LateAlways/FuchsiaX-SRC/refs/heads/main/apiscript/BreakingPointUtils.lua"))()
    
       if getgenv().fx_settings and getgenv().fx_settings.SaveSettings then
          getgenv().fx_settings.SaveSettings()
@@ -6795,7 +6795,7 @@ elseif answer[1] == "0" then
       LocalPlayer.OnTeleport:Connect(function(State)
          if getgenv().fx_settings.Global.LoadOnTP and not TeleportCheck and queueteleport then
             TeleportCheck = true
-            queueteleport("loadstring(game:HttpGet('https://fuchsiax.latealways.dev/script'))()")
+            queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/LateAlways/FuchsiaX-SRC/refs/heads/main/loader.luau'))()")
          end
       end)
    
